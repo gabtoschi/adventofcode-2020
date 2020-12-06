@@ -18,3 +18,19 @@ def readDayInput(day, toInt = False):
 
 def printDayAnswer(star, answer):
     print(f'Star #{star}: {answer}')
+
+def groupInput(input):
+    groups = []
+    currentGroup = []
+
+    for line in input:
+        if line:
+            currentGroup.append(line)
+        else:
+            groups.append(currentGroup)
+            currentGroup = []
+
+    groups.append(currentGroup)
+
+    return groups
+
